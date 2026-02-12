@@ -1,0 +1,13 @@
+# Minimum Unity ignores
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+.DS_Store
+Thumbs.db
+.vscode/
+.vs
+.idea/
