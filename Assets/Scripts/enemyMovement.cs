@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [Header("Chase Settings")]
-    public float speed = 3f;
+    public float speed = 5f;
     public float detectionRadius = 8f;
     public float stopDistance = 0.5f;
 

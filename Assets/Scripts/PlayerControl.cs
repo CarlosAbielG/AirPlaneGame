@@ -8,9 +8,14 @@ public class PlayerControl : MonoBehaviour
     float speedX, speedY;
     Rigidbody2D rb;
 
+    [SerializeField] private SpriteRenderer sprite;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if (sprite == null) sprite = GetComponent<SpriteRenderer>();
+        if (sprite == null) sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -24,6 +29,12 @@ public class PlayerControl : MonoBehaviour
 
             if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) input.y = 1;
             if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) input.y = -1;
+        }
+
+        if (sprite != null)
+        {
+            if (input.x < 0) sprite.flipX = true;
+            else if (input.x > 0) sprite.flipX = false;
         }
 
         speedX = input.x * movSpeed;
